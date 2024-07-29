@@ -4,13 +4,34 @@ const Navbar = () => {
   const navLinsk = (
     <>
       <li className="font-worksans">
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-green-500 border-b-2 border-green-500"
+              : "text-gray-300 hover:bg-green-500 hover:text-white"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className="font-worksans ml-4">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-green-500 border-b-2 border-green-500"
+              : "text-gray-300 hover:bg-green-500 hover:text-white"
+          }
+        >
+          Listed Books
+        </NavLink>
       </li>
     </>
   );
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 container mx-auto max-w-screen-3xl px-4 mt-12 sm:px-6 lg:px-8">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,8 +62,13 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinsk}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end font-worksans ">
+          <button className="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600">
+            Sign In
+          </button>
+          <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 ml-4">
+            Sign Up
+          </button>
         </div>
       </div>
     </>
