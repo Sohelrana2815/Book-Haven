@@ -4,28 +4,7 @@ const Navbar = () => {
   const navLinsk = (
     <>
       <li className="font-worksans">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "text-green-500 border-b-2 border-green-500"
-              : "text-gray-300 hover:bg-green-500 hover:text-white"
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li className="font-worksans ml-4">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "text-green-500 border-b-2 border-green-500"
-              : "text-gray-300 hover:bg-green-500 hover:text-white"
-          }
-        >
-          Listed Books
-        </NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
     </>
   );
@@ -63,12 +42,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinsk}</ul>
         </div>
         <div className="navbar-end font-worksans ">
-          <button className="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600">
-            Sign In
-          </button>
-          <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 ml-4">
-            Sign Up
-          </button>
+          <button className="btn btn-info">Sign In</button>
+          <button className="btn btn-success ml-4">Sign Up</button>
         </div>
       </div>
     </>

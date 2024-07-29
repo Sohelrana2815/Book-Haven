@@ -10,6 +10,9 @@ export default {
         playfair: ['"Playfair Display"', "serif"],
         worksans: ['"Work Sans"', "sans-serif"],
       },
+      backgroundColor: {
+        hexgreen: ["#23BE0A"],
+      },
     },
   },
   plugins: [require("daisyui")],
