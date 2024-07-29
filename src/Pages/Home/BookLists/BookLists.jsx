@@ -12,8 +12,7 @@ const BookLists = () => {
   return (
     <>
       <h2 className="text-center font-bold text-3xl">Books</h2>
-      <h2 className="text-center text-4xl"> All books : {books.length}</h2>
-      <div>
+      <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6">
         {books.map((book) => (
           <BookListsCard key={book.id} book={book}></BookListsCard>
         ))}
