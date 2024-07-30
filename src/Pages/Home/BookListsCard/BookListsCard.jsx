@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const BookListsCard = ({ book }) => {
-  const { image, bookName, author, category, rating, tags } = book;
+  const { image, bookName, author, category, rating, tags, id } = book;
   return (
     <>
       <div className="card bg-base-100 lg:w-96 shadow-xl">
-        <Link>
+        <Link to={`/book/${id}`}>
           <figure>
             <img src={image} alt={bookName} className="lg:w-40 w-36 " />
           </figure>
