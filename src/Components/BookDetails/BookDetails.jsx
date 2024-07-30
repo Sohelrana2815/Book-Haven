@@ -16,27 +16,29 @@ const BookDetails = () => {
     read: false,
     wishlist: false,
   });
+
   const handleReadClick = () => {
-    if (bookStatus.wishlist) {
-      toast.error("You have already added this book in wishlist");
-    } else if (bookStatus.read) {
-      toast.error("You have already added this book in read list ");
+    if (bookStatus.read) {
+      toast.error("You have already added this book to the read list.");
     } else {
       setBookStatus({ ...bookStatus, read: true });
-      toast.success("Book added to read list");
+      toast.success("Book added to read list.");
     }
   };
 
   const handleWishlistClick = () => {
     if (bookStatus.read) {
-      toast.error("You have already added this book in read list.");
+      toast.error(
+        "You have already added this book to the read list and cannot add it to the wishlist."
+      );
     } else if (bookStatus.wishlist) {
-      toast.error("You have already added this book in wishlist");
+      toast.error("You have already added this book to the wishlist.");
     } else {
       setBookStatus({ ...bookStatus, wishlist: true });
-      toast.success("Book added to wishlist");
+      toast.success("Book added to wishlist.");
     }
   };
+
   return (
     <div className="flex gap-6">
       <ToastContainer />
