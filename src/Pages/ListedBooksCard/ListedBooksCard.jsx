@@ -17,26 +17,25 @@ const ListedBooksCard = ({ book }) => {
   } = book;
   return (
     <>
-      <div className="container mt-8 border-2 rounded-xl p-6 flex space-x-10 space-y-6">
+      <div className="container mt-8 border-2 rounded-xl p-6 flex flex-col lg:flex-row lg:space-x-10 space-y-6 lg:space-y-0">
         <div className="p-4">
           <img
             src={image}
-            className="shadow-2xl rounded-xl p-4 lg:w-52 bg-gray-50 "
+            className="shadow-2xl rounded-xl p-4 lg:w-52 bg-gray-50 w-full"
             alt={bookName}
           />
         </div>
-        <div className="p-4">
+        <div className="p-4 flex-1">
           <h2 className="text-2xl font-bold font-playfair">{bookName}</h2>
           <p className="mt-4">By : {author}</p>
           {/* tags and publish year */}
-          <span className="flex items-center space-x-4 p-4 ">
-            <span className="font-bold"> Tags </span>
+          <div className="flex flex-wrap items-center space-x-4 p-4">
+            <span className="font-bold">Tags</span>
             {tags.map((tag, index) => (
               <small
                 key={index}
                 className="border rounded-full p-2 bg-base-200 text-green-400"
               >
-                {" "}
                 # {tag}
               </small>
             ))}
@@ -44,13 +43,13 @@ const ListedBooksCard = ({ book }) => {
               <FaLocationDot className="mr-2" /> Year of Publishing :{" "}
               {yearOfPublishing}
             </span>
-          </span>
+          </div>
           <p className="flex items-center gap-2">
             <FaUser /> Publisher : {publisher}
             <FaBookOpen /> Page {totalPages}
           </p>
-          <div className="border-b mt-6 p-2 "></div>
-          <div className="flex items-center space-x-6 mt-6 p-4">
+          <div className="border-b mt-6 p-2"></div>
+          <div className="flex flex-col lg:flex-row items-center space-x-0 lg:space-x-6 mt-6 p-4">
             <p>Category : {category}</p>
             <p>Rating : {rating}</p>
             <Link to={`/book/${id}`}>

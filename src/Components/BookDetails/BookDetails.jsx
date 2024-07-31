@@ -39,12 +39,12 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="flex gap-6">
+    <div className="flex flex-col lg:flex-row gap-6">
       <ToastContainer />
-      <div className="w-2/5  p-2">
+      <div className="w-full lg:w-2/5 p-2">
         <img src={book.image} alt={book.bookName} className="w-full" />
       </div>
-      <div className="w-3/5  p-4">
+      <div className="w-full lg:w-3/5 p-4">
         <h1 className="text-4xl font-bold font-playfair">{book.bookName}</h1>
         <p className="text-lg">By : {book.author}</p>
         <div className="divider"></div>
@@ -63,7 +63,7 @@ const BookDetails = () => {
           <p>Publisher : {book.publisher}</p>
           <p>Year of Publishing : {book.yearOfPublishing}</p>
           <p>Rating : {book.rating}</p>
-          <div>
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={handleReadClick}
               className="btn btn-outline hover:bg-green-500 px-8"
@@ -72,7 +72,7 @@ const BookDetails = () => {
             </button>
             <button
               onClick={handleWishlistClick}
-              className="btn btn-info border-none px-8 ml-4"
+              className="btn btn-info border-none px-8"
             >
               Wishlist
             </button>

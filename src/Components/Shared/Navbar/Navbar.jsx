@@ -46,9 +46,9 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        <div className="navbar-end font-worksans ">
+        <div className="navbar-end font-worksans flex items-center space-x-4">
           <button className="btn btn-info">Sign In</button>
-          <button className="btn btn-success ml-4">Sign Up</button>
+          <button className="btn btn-success">Sign Up</button>
         </div>
       </div>
     </>
