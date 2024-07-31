@@ -1,22 +1,81 @@
+import PropTypes from "prop-types";
+import { FaBookOpen, FaLocationDot, FaUser } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const ListedBooksCard = () => {
+const ListedBooksCard = ({ book }) => {
+  const {
+    image,
+    bookName,
+    author,
+    tags,
+    totalPages,
+    rating,
+    category,
+    publisher,
+    yearOfPublishing,
+    id,
+  } = book;
   return (
-    <div className="card card-compact bg-base-100 w-96 shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+    <>
+      <div className="container mt-8 border-2 rounded-xl p-6 flex space-x-10 space-y-6">
+        <div className="p-4">
+          <img
+            src={image}
+            className="shadow-2xl rounded-xl p-4 lg:w-52 bg-gray-50 "
+            alt={bookName}
+          />
+        </div>
+        <div className="p-4">
+          <h2 className="text-2xl font-bold font-playfair">{bookName}</h2>
+          <p className="mt-4">By : {author}</p>
+          {/* tags and publish year */}
+          <span className="flex items-center space-x-4 p-4 ">
+            <span className="font-bold"> Tags </span>
+            {tags.map((tag, index) => (
+              <small
+                key={index}
+                className="border rounded-full p-2 bg-base-200 text-green-400"
+              >
+                {" "}
+                # {tag}
+              </small>
+            ))}
+            <span className="flex items-center">
+              <FaLocationDot className="mr-2" /> Year of Publishing :{" "}
+              {yearOfPublishing}
+            </span>
+          </span>
+          <p className="flex items-center gap-2">
+            <FaUser /> Publisher : {publisher}
+            <FaBookOpen /> Page {totalPages}
+          </p>
+          <div className="border-b mt-6 p-2 "></div>
+          <div className="flex items-center space-x-6 mt-6 p-4">
+            <p>Category : {category}</p>
+            <p>Rating : {rating}</p>
+            <Link to={`/book/${id}`}>
+              <button className="btn btn-success btn-sm">View Details</button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
+};
+
+ListedBooksCard.propTypes = {
+  book: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    bookName: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    totalPages: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    yearOfPublishing: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default ListedBooksCard;

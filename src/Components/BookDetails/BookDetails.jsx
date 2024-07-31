@@ -41,10 +41,10 @@ const BookDetails = () => {
   return (
     <div className="flex gap-6">
       <ToastContainer />
-      <div className="w-2/5 border-4 p-2">
+      <div className="w-2/5  p-2">
         <img src={book.image} alt={book.bookName} className="w-full" />
       </div>
-      <div className="w-3/5 border-4 p-4">
+      <div className="w-3/5  p-4">
         <h1 className="text-4xl font-bold font-playfair">{book.bookName}</h1>
         <p className="text-lg">By : {book.author}</p>
         <div className="divider"></div>

@@ -11,8 +11,8 @@ const BookLists = () => {
   }, []);
   return (
     <>
-      <h2 className="text-center font-bold text-3xl">Books</h2>
-      <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6">
+      <h2 className="text-center font-bold text-3xl mt-10 font-worksans">Books</h2>
+      <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6 mt-20">
         {books.map((book) => (
           <BookListsCard key={book.id} book={book}></BookListsCard>
         ))}
