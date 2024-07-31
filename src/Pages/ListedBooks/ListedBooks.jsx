@@ -31,6 +31,11 @@ const ListedBooks = () => {
 
   return (
     <>
+      <div className="bg-gray-300 p-4 rounded-lg shadow-lg text-center mt-20">
+        <h2 className="text-black font-semibold text-2xl font-worksans">
+          Books
+        </h2>
+      </div>
       <div className="container mx-auto mt-8">
         <Tabs>
           <TabList>
