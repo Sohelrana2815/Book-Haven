@@ -1,30 +1,44 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredBooks } from "../../Utility/localStorage";
+import { Tab, TabList, Tabs } from "react-tabs";
 
 const ListedBooks = () => {
-  const books = useLoaderData();
+  const books = useLoaderData(); // load all book data from loader
+
   const [readBooks, setReadBooks] = useState([]);
   const [wishlistBooks, setWishlistBooks] = useState([]);
-  const [activeTab, setActiveTab] = useState("read");
 
   useEffect(() => {
     const { readList, wishList } = getStoredBooks();
+
     if (books.length > 0) {
-      const readBooksList = books.filter((book) => readList.includes(book.id));
-      const wishListBookList = books.filter((book) =>
+      // filter read books
+      const filteredReadBooks = books.filter((book) =>
+        readList.includes(book.id)
+      );
+      setReadBooks(filteredReadBooks);
+
+      // filter wishlist books
+
+      const filteredWishlistBooks = books.filter((book) =>
         wishList.includes(book.id)
       );
-      setReadBooks(readBooksList);
-      setWishlistBooks(wishListBookList);
+      setWishlistBooks(filteredWishlistBooks);
     }
   }, [books]);
 
-  //   console.log(books);
   return (
-    <div>
-      
-    </div>
+    <>
+      <div className="container mx-auto mt-8">
+        <Tabs>
+          <TabList>
+            <Tab>Read Books</Tab>
+            <Tab>Wishlist Books</Tab>
+          </TabList>
+        </Tabs>
+      </div>
+    </>
   );
 };
 

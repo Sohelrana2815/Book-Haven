@@ -22,6 +22,7 @@ const saveToWishList = (id) => {
   const isAlreadyInWishlist = wishlist.includes(id);
   if (!isAlreadyInWishlist) {
     wishlist.push(id);
+    localStorage.setItem("wishlistBooks", JSON.stringify(wishlist));
   }
 };
 
