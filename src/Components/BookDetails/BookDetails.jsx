@@ -39,7 +39,7 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6">
+    <div className="flex flex-col lg:flex-row gap-6 mt-10">
       <ToastContainer />
       <div className="w-full lg:w-2/5 p-2">
         <img src={book.image} alt={book.bookName} className="w-full" />

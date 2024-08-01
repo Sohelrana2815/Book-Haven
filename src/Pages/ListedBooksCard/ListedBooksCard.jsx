@@ -39,17 +39,17 @@ const ListedBooksCard = ({ book }) => {
                 # {tag}
               </small>
             ))}
-            <span className="flex items-center">
+            <span className="flex items-center mt-4 lg:mt-0">
               <FaLocationDot className="mr-2" /> Year of Publishing :{" "}
               {yearOfPublishing}
             </span>
           </div>
-          <p className="flex items-center gap-2">
+          <p className="flex  items-center gap-2">
             <FaUser /> Publisher : {publisher}
             <FaBookOpen /> Page {totalPages}
           </p>
           <div className="border-b mt-6 p-2"></div>
-          <div className="flex flex-col lg:flex-row items-center space-x-0 lg:space-x-6 mt-6 p-4">
+          <div className="flex space-y-3 lg:space-y-0 flex-col lg:flex-row items-center space-x-0 lg:space-x-6 mt-6 p-4">
             <p>Category : {category}</p>
             <p>Rating : {rating}</p>
             <Link to={`/book/${id}`}>

@@ -11,7 +11,7 @@ const Banner = () => {
             alt="Book"
           />
           <div className="text-center lg:text-left lg:ml-8 mt-6 lg:mt-0">
-            <h1 className="text-5xl font-bold font-playfair lg:w-3/4 leading-relaxed">
+            <h1 className="text-3xl lg:text-5xl font-bold font-playfair lg:w-3/4 leading-relaxed">
               Books to freshen up your bookshelf
             </h1>
             <Link to="/listedBooks">
