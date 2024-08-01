@@ -1,11 +1,24 @@
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const BookListsCard = ({ book }) => {
   const { image, bookName, author, category, rating, tags, id } = book;
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
-      <div className="card bg-base-100 w-full lg:w-96 shadow-xl">
+      <div
+        className="card bg-base-100 w-full lg:w-96 shadow-xl"
+        data-aos="fade-up"
+      >
         <Link to={`/book/${id}`}>
           <figure>
             <img src={image} alt={bookName} className="w-24 sm:w-36 lg:w-40" />

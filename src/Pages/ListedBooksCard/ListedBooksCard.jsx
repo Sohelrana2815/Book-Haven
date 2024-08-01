@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 import { FaBookOpen, FaLocationDot, FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ListedBooksCard = ({ book }) => {
   const {
@@ -15,9 +18,20 @@ const ListedBooksCard = ({ book }) => {
     yearOfPublishing,
     id,
   } = book;
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    });
+  }, []);
   return (
     <>
-      <div className="container mt-8 border-2 rounded-xl p-6 flex flex-col lg:flex-row lg:space-x-10 space-y-6 lg:space-y-0">
+      <div
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        className="container mt-8 border-2 rounded-xl p-6 flex flex-col lg:flex-row lg:space-x-10 space-y-6 lg:space-y-0"
+      >
         <div className="p-4">
           <img
             src={image}

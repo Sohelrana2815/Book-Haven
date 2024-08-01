@@ -1,16 +1,25 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   getStoredBooks,
   saveToReadList,
   saveToWishList,
 } from "../../Utility/localStorage";
+import { useEffect } from "react";
 
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   // console.log(books, idInt);
 
@@ -42,7 +51,12 @@ const BookDetails = () => {
     <div className="flex flex-col lg:flex-row gap-6 mt-10">
       <ToastContainer />
       <div className="w-full lg:w-2/5 p-2">
-        <img src={book.image} alt={book.bookName} className="w-full" />
+        <img
+          data-aos="zoom-in"
+          src={book.image}
+          alt={book.bookName}
+          className="w-full"
+        />
       </div>
       <div className="w-full lg:w-3/5 p-4">
         <h1 className="text-4xl font-bold font-playfair">{book.bookName}</h1>

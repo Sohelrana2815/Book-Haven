@@ -9,6 +9,7 @@ const Banner = () => {
           <img
             src={bannerImg}
             className="max-w-sm rounded-lg w-full lg:w-auto"
+            data-aos="zoom-in"
             alt="Book"
           />
           <div className="text-center lg:text-left lg:ml-8 mt-6 lg:mt-0 ">
