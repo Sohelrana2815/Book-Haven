@@ -40,7 +40,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <p className="btn btn-ghost text-lg lg:text-xl font-playfair">
+            <p className="btn btn-ghost lg:text-xl    font-playfair">
               Book Haven
             </p>
           </Link>
