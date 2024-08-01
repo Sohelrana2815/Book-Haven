@@ -40,7 +40,9 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <p className="btn btn-ghost text-lg lg:text-xl font-playfair">Book Haven</p>
+            <p className="btn btn-ghost text-lg lg:text-xl font-playfair">
+              Book Haven
+            </p>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -48,10 +50,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end font-worksans flex items-center space-x-4">
           <div className="flex space-x-2">
-            <button className="btn btn-sm btn-info lg:btn lg:btn-primary">
+            <button className="btn btn-sm btn-info  md:btn md:btn-primary">
               Sign In
             </button>
-            <button className="btn btn-sm btn-success  lg:btn lg:btn-secondary">
+            <button className="btn btn-sm btn-success  md:btn md:btn-secondary">
               Sign Up
             </button>
           </div>
