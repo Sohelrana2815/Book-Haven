@@ -24,6 +24,7 @@ const BookDetails = () => {
   // console.log(books, idInt);
 
   const book = books.find((book) => book.id === idInt);
+
   const handleReadClick = () => {
     const { readList } = getStoredBooks();
     if (readList.includes(book.id)) {
