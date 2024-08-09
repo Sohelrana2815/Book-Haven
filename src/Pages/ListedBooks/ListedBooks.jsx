@@ -33,18 +33,30 @@ const ListedBooks = () => {
   }, [books, sortCriteria]); // Re-run this effect when books data or sort criteria changes
 
   // Function to sort books based on selected criteria
-  const sortBooks = (booksArray, criteria) => {
-    if (!criteria) return booksArray; // If no criteria selected, return the original order
 
+  const sortBooks = (booksArray, criteria) => {
+    if (!criteria) return booksArray; // if no criteria selected , return the original order
     // Sort the books array in descending order based on the selected criteria
     return booksArray.sort((a, b) => {
       if (criteria === "rating") return b.rating - a.rating;
       if (criteria === "totalPages") return b.totalPages - a.totalPages;
       if (criteria === "yearOfPublishing")
         return b.yearOfPublishing - a.yearOfPublishing;
-      return 0; // Default case: no sorting applied
+      return 0; // Default case : no sorting applied
     });
   };
+  // const sortBooks = (booksArray, criteria) => {
+  //   if (!criteria) return booksArray; // If no criteria selected, return the original order
+
+  //   // Sort the books array in descending order based on the selected criteria
+  //   return booksArray.sort((a, b) => {
+  //     if (criteria === "rating") return b.rating - a.rating;
+  //     if (criteria === "totalPages") return b.totalPages - a.totalPages;
+  //     if (criteria === "yearOfPublishing")
+  //       return b.yearOfPublishing - a.yearOfPublishing;
+  //     return 0; // Default case: no sorting applied
+  //   });
+  // };
 
   return (
     <>
@@ -55,13 +67,16 @@ const ListedBooks = () => {
       </div>
       <div className="container mx-auto mt-8">
         {/* Dropdown to select sort criteria */}
-        <div className="mb-4">
-          <label htmlFor="sort" className="font-semibold mr-2">
+        <div className="mb-4 w-full sm:w-auto">
+          <label
+            htmlFor="sort"
+            className="font-semibold mr-2 block sm:inline-block"
+          >
             Sort by:
           </label>
           <select
             id="sort"
-            className="p-2 border border-gray-300 rounded"
+            className="w-full sm:w-auto p-2 border border-gray-300 rounded"
             value={sortCriteria}
             onChange={(e) => setSortCriteria(e.target.value)} // Update sort criteria state when selection changes
           >
@@ -71,6 +86,7 @@ const ListedBooks = () => {
             <option value="yearOfPublishing">Published Year</option>
           </select>
         </div>
+
         <Tabs>
           <TabList>
             <Tab>Read Books</Tab>
